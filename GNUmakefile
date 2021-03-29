@@ -36,7 +36,7 @@ xgetrootname/xgetrootname: xgetrootname/xgetrootname.c
 	${CC} -o $@ ${CFLAGS} ${X11CFLAGS} $< ${X11LIBS}
 
 clean:
-	rm -f dwmblocks sigdwmblocks/sigdwmblocks xgetrootname/xgetrootname
+	rm -f dwmblocks sigdwmblocks/sigdwmblocks xgetrootname/xgetrootname config.h
 
 BINDIR = ${DESTDIR}${PREFIX}/bin
 
