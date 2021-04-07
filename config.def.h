@@ -1,8 +1,8 @@
 /* macro for conveniently specifying pathu and pathc below */
-#define PATH(name)                      "<path to the folder containing block scripts>/"name
+#define PATH(name)                      "/home/csorian/.local/scripts/"name
 
 /* buffer size for capturing output of the programs used for updating blocks */
-#define CMDOUTLENGTH                    50
+#define CMDOUTLENGTH                    100
 
 /* DELIMITERENDCHAR must be less than 32.
  * At max, DELIMITERENDCHAR - 1 number of clickable blocks are allowed.
@@ -17,7 +17,7 @@
 
 /* delimiter specified as an array of characters
  * don't remove DELIMITERENDCHAR at the end */
-static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
+static const char delimiter[] = { ' ', '|', ' ', DELIMITERENDCHAR };
 
 #include "block.h"
 
@@ -43,9 +43,13 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("calendar.sh"),          NULL,                           30,             1},
-        { PATH("volume.sh"),            PATH("volume_button.sh"),       0,              2},
-        { PATH("cpu_temp.sh"),          PATH("cpu_temp_button.sh"),     1,              4},
-        { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3},
+        { PATH("sb-media"),             NULL,                           30,             5},
+        { PATH("sb-network"),           NULL,                           30,             4},
+        { PATH("sb-levels"),            NULL,                           30,             3},
+        { PATH("sb-clock"),             NULL,                           30,             2},
+        { PATH("sb-help"),              NULL,                           0,              1},
+/*        { PATH("cpu_temp.sh"),          PATH("cpu_temp_button.sh"),     1,              4}, */
+/*        { PATH("battery.sh"),           PATH("battery_button.sh"),      30,             3}, */
         { NULL } /* just to mark the end of the array */
 };
+
